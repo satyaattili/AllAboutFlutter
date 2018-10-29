@@ -1,4 +1,4 @@
-package in.mobileappdev.allaboutflutterapp
+package `in`.mobileappdev.allaboutflutterapp
 
 import android.os.Bundle
 

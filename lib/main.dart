@@ -1,41 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:all_about_flutter_app/screens/home_screen.dart';
+import 'package:flutter/services.dart';
+import 'package:all_about_flutter_app/screens/scroll_views.dart';
 
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Flutter Demo',
-      theme: new ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: new MyHomePage(title: 'All about flutter'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => new _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+  final routes = <String, WidgetBuilder>{
+    "/home": (BuildContext context) => HomeScreen(),
+    "/horizontal-list": (BuildContext context) => HorizontalList(),
+  };
 
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(widget.title),
+    //fix orientation to potrait
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitDown,
+      DeviceOrientation.portraitUp,
+    ]);
+
+    return MaterialApp(
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Colors.orange[800],
+        accentColor: Colors.cyan[600],
       ),
-      body: new Center(
-        child: new Text("All about Flutter"),
-      )
+      home: HomeScreen(),
+      routes: routes,
     );
   }
 }
