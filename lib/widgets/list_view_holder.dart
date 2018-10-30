@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class CardSectionHolder extends StatelessWidget {
+class ScrollViewHolder extends StatelessWidget {
 
-  const CardSectionHolder(
+  const ScrollViewHolder(
       { Key key, this.cardTitle, this.actionText, this.backgroundColor,this.child, this.actionClickCallBAck}) : super(key: key);
 
   final String cardTitle;

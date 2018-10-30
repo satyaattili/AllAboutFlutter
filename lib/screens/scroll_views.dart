@@ -1,6 +1,6 @@
 import 'package:all_about_flutter_app/data/data_constants.dart';
 import 'package:flutter/material.dart';
-import 'package:all_about_flutter_app/widgets/categories_section.dart';
+import 'package:all_about_flutter_app/widgets/list_view_holder.dart';
 
 class HorizontalList extends StatelessWidget {
   static String tag = "tag-horizontal-list";
@@ -14,17 +14,17 @@ class HorizontalList extends StatelessWidget {
             ),
             body: Column(
               children: <Widget>[
-                headerText("Only List View"),
+                headerTextWithPadding("Only List View", 10.0),
                 listView,
-                headerText("List view as child to custom Widget 1"),
-                CardSectionHolder(
+                headerTextWithPadding("List view as child to custom Widget 1", 10.0),
+                ScrollViewHolder(
                   cardTitle: "Section 1",
                   actionText: "Click Here",
                   actionClickCallBAck: onClick(),
                   child: listView,
                 ),
-                headerText("List view as child to custom Widget 2"),
-                CardSectionHolder(
+                headerTextWithPadding("List view as child to custom Widget 2", 10.0),
+                ScrollViewHolder(
                   cardTitle: "Section 2",
                   actionText: "View All",
                   backgroundColor: Colors.blueAccent,
@@ -65,8 +65,8 @@ class HorizontalList extends StatelessWidget {
     );
   }
 
-  static Padding headerText(String text) {
-    return new Padding(padding: EdgeInsets.all(10.0),
+  static Padding headerTextWithPadding(String text, double padding) {
+    return new Padding(padding: EdgeInsets.all(padding),
         child: new Text(text, style: new TextStyle(fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),));
   }
 
