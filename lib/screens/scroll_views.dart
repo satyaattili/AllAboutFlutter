@@ -36,7 +36,7 @@ class HorizontalList extends StatelessWidget {
         ));
   }
 
-  var listView = new Container(
+  var listView = Container(
       margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
       height: 120.0,
       child: ListView.builder(
