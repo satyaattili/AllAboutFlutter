@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:all_about_flutter_app/screens/home_screen.dart';
 import 'package:flutter/services.dart';
 import 'package:all_about_flutter_app/screens/scroll_views.dart';
+import 'package:all_about_flutter_app/screens/fbstory/fb_story_screen.dart';
 
 void main() => runApp(new MyApp());
 
@@ -9,6 +10,7 @@ class MyApp extends StatelessWidget {
   final routes = <String, WidgetBuilder>{
     "/home": (BuildContext context) => HomeScreen(),
     "/horizontal-list": (BuildContext context) => HorizontalList(),
+    "/fbstory": (BuildContext context) => FBStoryScreen(),
   };
 
 

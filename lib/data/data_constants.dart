@@ -1,7 +1,7 @@
-
 var homeList = [
   'Horizontal List',
-  'Verical List'
+  'Verical List',
+  'FB Story View',
 ];
 
 var imageUrls = [

@@ -24,7 +24,19 @@ class HomeScreen extends StatelessWidget {
       BuildContext context, String listItemText, int index) {
     return new InkWell(
         onTap: () {
-          Navigator.of(context).pushNamed("/horizontal-list");
+          String route = '/home';
+          switch (index) {
+            case 0:
+              route = '/home';
+              break;
+            case 1:
+              route = '/horizontal-list';
+              break;
+            case 2:
+              route = '/fbstory';
+              break;
+          }
+          Navigator.of(context).pushNamed(route);
         },
         child: new ListTile(
           title: new Text(listItemText,
